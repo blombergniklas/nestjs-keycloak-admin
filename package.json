@@ -1,6 +1,6 @@
 {
   "name": "nestjs-keycloak-admin",
-  "version": "1.8.2",
+  "version": "1.8.2.1",
   "description": "Keycloak Admin Provider for Nest.js",
   "author": "Yagiz Nizipli <yagiz@nizipli.com>",
   "license": "MIT",
@@ -18,9 +18,7 @@
     "style:lint": "eslint src --ext .js,.ts --fix",
     "start:dev": "tsc -w",
     "clean": "rm -rf dist",
-    "build": "concurrently \"npm run build:module\" \"npm run build:main\"",
-    "build:module": "tsc -p tsconfig.json --module ESNext --target ESNext --outDir dist/module",
-    "build:main": "tsc -p tsconfig.json --module commonjs  --target ES2017 --outDir dist/main",
+    "build": "tsc -p tsconfig.json --module commonjs  --target ES2017 --outDir dist/main",
     "prepare": "npm run build",
     "format": "prettier --write \"src/**/*.ts\"",
     "release": "semantic-release"
@@ -38,23 +36,23 @@
   },
   "bugs": "https://github.com/anonrig/nestjs-keycloak-admin",
   "peerDependencies": {
-    "@nestjs/common": "^8.2.6",
-    "@nestjs/core": "^8.2.6",
+    "@nestjs/common": "10",
+    "@nestjs/core": "^10",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.5.2"
   },
   "dependencies": {
-    "@keycloak/keycloak-admin-client": "^18.0.0",
-    "@nestjs/graphql": "^10.0.15",
+    "@keycloak/keycloak-admin-client": "^18.0.2",
+    "@nestjs/graphql": "^12.0.8",
     "axios": "^0.27.2",
     "keycloak-connect": "^18.0.0",
-    "openid-client": "^5.1.6"
+    "openid-client": "^5.5.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
-    "@nestjs/common": "^8.4.6",
-    "@nestjs/core": "^8.4.6",
+    "@nestjs/common": "^10",
+    "@nestjs/core": "^10",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/git": "^10.0.1",
@@ -62,20 +60,20 @@
     "@semantic-release/npm": "^9.0.1",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@types/express": "^4.17.13",
-    "@types/node": "17.0.35",
-    "@types/ws": "^8.5.3",
+    "@types/node": "20.6.0",
+    "@types/ws": "^8.5.5",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
     "concurrently": "^7.2.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
-    "graphql": "^16.5.0",
+    "graphql": "^16.6.0",
     "husky": "^8.0.1",
     "prettier": "2.6.2",
     "rxjs": "^7.5.5",
     "semantic-release": "^19.0.2",
-    "ts-morph": "^15.0.0",
+    "ts-morph": "^19.0.0",
     "typescript": "4.6.4"
   }
 }
