@@ -1,5 +1,5 @@
+import { KeycloakAdminClient } from '@s3pweb/keycloak-admin-client-cjs';
 import { Logger, Global } from '@nestjs/common'
-import AdminClient from '@keycloak/keycloak-admin-client'
 import { Client, Issuer, TokenSet } from 'openid-client'
 import { resolve } from 'url'
 import { ResourceManager } from './lib/resource-manager'
@@ -24,7 +24,7 @@ export class KeycloakService {
   public connect: Keycloak
   public permissionManager!: PermissionManager
   public resourceManager!: ResourceManager
-  public client: AdminClient
+  public client: KeycloakAdminClient
 
   constructor(options: KeycloakModuleOptions) {
     if (!options.baseUrl.startsWith('http')) {
@@ -46,7 +46,7 @@ export class KeycloakService {
     }
 
     this.connect = keycloak as Keycloak
-    this.client = new AdminClient({
+    this.client = new KeycloakAdminClient({
       baseUrl: this.options.baseUrl,
       realmName: this.options.realmName,
     })
